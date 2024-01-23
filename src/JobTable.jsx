@@ -1,3 +1,4 @@
+import JobDetail from './JobDetail';
 import JobRow from './JobRow';
 import jobs from './jobs';
 
@@ -25,6 +26,7 @@ function JobTable() {
           })}
         </tbody>
       </table>
+      <JobDetail />
     </>
   );
 }
