@@ -5,6 +5,7 @@ function JobRow({ jobItem }) {
     <tr>
       <td>{jobItem.jobTitle}</td>
       <td>{jobItem.company}</td>
+      <td>{jobItem.jobPostLink}</td>
       <td>{jobItem.date}</td>
       <td>{jobItem.status}</td>
     </tr>
