@@ -1,4 +1,7 @@
-const jobs = [
+import { Job } from './types';
+
+
+const jobs: Array<Job> = [
   {
     id: '1a68e48c-40d5-4c0a-9e67-2a6f922a0298',
     jobTitle: 'Frontend Developer',

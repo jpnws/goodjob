@@ -3,7 +3,8 @@ import JobTable from './JobTable';
 function App() {
   return (
     <>
-      <main className="container mt-5">
+      <main className="text-3xl font-bold underline">
+        Hello there!
         <JobTable />
       </main>
     </>
