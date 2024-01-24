@@ -1,18 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import JobRow from './JobRow';
-import jobs from './jobs';
 
 import { dbClient } from './db';
+import { Database } from './supabase';
 
 function JobTable() {
+  const [jobs, setJobs] = useState<Array<
+    Database['public']['Tables']['job']['Row']
+  > | null>();
+
+  async function fetchJobs() {
+    const { data, error } = await dbClient.from('job').select();
+    setJobs(data);
+    if (error) console.error(error);
+  }
+
   useEffect(() => {
-    async function fetchJobs() {
-      const { data, error } = await dbClient.from('job').select('*');
-      console.log(data);
-      if (error) console.error(error);
-    }
     fetchJobs();
   }, []);
+
   return (
     <>
       <table className="">
@@ -26,14 +32,16 @@ function JobTable() {
           </tr>
         </thead>
         <tbody className="">
-          {jobs.map((item) => {
-            return (
-              <JobRow
-                key={item.id}
-                jobItem={item}
-              />
-            );
-          })}
+          {jobs
+            ? jobs.map((item) => {
+                return (
+                  <JobRow
+                    key={item.id}
+                    jobItem={item}
+                  />
+                );
+              })
+            : null}
         </tbody>
       </table>
     </>
