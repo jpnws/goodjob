@@ -1,7 +1,18 @@
+import { useEffect } from 'react';
 import JobRow from './JobRow';
 import jobs from './jobs';
 
+import { dbClient } from './db';
+
 function JobTable() {
+  useEffect(() => {
+    async function fetchJobs() {
+      const { data, error } = await dbClient.from('job').select('*');
+      console.log(data);
+      if (error) console.error(error);
+    }
+    fetchJobs();
+  }, []);
   return (
     <>
       <table className="">
