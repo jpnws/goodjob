@@ -6,15 +6,15 @@ import { dbClient } from './db';
 function JobTable() {
   const [jobs, setJobs] = useState();
 
-  async function fetchJobs() {
-    const { data, error } = await dbClient.from('job').select();
-    setJobs(data);
-    if (error) console.error(error);
-  }
-
   useEffect(() => {
     fetchJobs();
   }, []);
+
+  async function fetchJobs() {
+    const { data, error } = await dbClient.from('job').select();
+    if (error) console.error(error);
+    setJobs(data);
+  }
 
   return (
     <>
