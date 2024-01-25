@@ -2,12 +2,9 @@ import { useEffect, useState } from 'react';
 import JobRow from './JobRow';
 
 import { dbClient } from './db';
-import { Database } from './supabase';
 
 function JobTable() {
-  const [jobs, setJobs] = useState<Array<
-    Database['public']['Tables']['job']['Row']
-  > | null>();
+  const [jobs, setJobs] = useState();
 
   async function fetchJobs() {
     const { data, error } = await dbClient.from('job').select();
