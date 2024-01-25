@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function JobRow({ jobItem }) {
   return (
     <tr>
@@ -9,5 +11,9 @@ function JobRow({ jobItem }) {
     </tr>
   );
 }
+
+JobRow.propTypes = {
+  jobItem: PropTypes.object,
+};
 
 export default JobRow;
