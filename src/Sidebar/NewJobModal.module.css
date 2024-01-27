@@ -1,0 +1,12 @@
+.newJobModal {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  right: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: 1px solid green;
+  padding: 1rem;
+  background-color: #ffffff;
+}
