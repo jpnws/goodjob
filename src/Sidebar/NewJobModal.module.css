@@ -6,7 +6,17 @@
   top: 25%;
   transform: translate(-50%, -50%);
   width: 50%;
-  border: 1px solid green;
+  border: 1px solid #64748b;
   padding: 1rem;
   background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerTitle {
+  font-weight: bold;
 }
