@@ -17,10 +17,10 @@ export default function JobTable() {
       </thead>
       <tbody className="">
         {jobs
-          ? jobs.map((item) => {
+          ? jobs.map((item, idx) => {
               return (
                 <JobRow
-                  key={item.id}
+                  key={idx}
                   jobItem={item}
                 />
               );
