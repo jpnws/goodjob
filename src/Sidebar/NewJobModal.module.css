@@ -10,6 +10,10 @@
   padding: 1rem;
   background-color: #ffffff;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
 }
 
 .header {
@@ -19,4 +23,25 @@
 
 .headerTitle {
   font-weight: bold;
+}
+
+.textBox {
+}
+
+.newJobForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newJobForm label {
+  margin: 0;
+  padding: 0;
+}
+
+.saveButton {
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: end;
 }
