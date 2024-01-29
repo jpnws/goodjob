@@ -15,10 +15,23 @@ export default function Dashboard() {
     setJobApplications(updatedJobApplications);
   };
 
+  const handleDeleteItemClick = (jobItem) => {
+    const updatedJobApplications = jobApplications.filter((item) => {
+      console.log(item.id);
+      if (item.id !== jobItem.id) {
+        return item;
+      }
+    });
+    setJobApplications(updatedJobApplications);
+  };
+
   return (
     <main className={styles.dashboard}>
       <Sidebar onNewJobSaveButtonClick={handleNewJobSaveButtonClick} />
-      <JobTable jobs={jobApplications} />
+      <JobTable
+        jobs={jobApplications}
+        onDeleteJobItem={handleDeleteItemClick}
+      />
     </main>
   );
 }

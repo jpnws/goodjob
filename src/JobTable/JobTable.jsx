@@ -4,11 +4,12 @@ import JobRow from '../JobRow';
 
 import styles from './JobTable.module.css';
 
-export default function JobTable({ jobs }) {
+export default function JobTable({ jobs, onDeleteJobItem }) {
   return (
     <table className={styles.jobTable}>
       <thead>
         <tr>
+          <th></th>
           <th className={styles.headerTitle}>Job Title</th>
           <th className={styles.headerTitle}>Company</th>
           <th className={styles.headerTitle}>Job Post</th>
@@ -23,6 +24,7 @@ export default function JobTable({ jobs }) {
                 <JobRow
                   key={item.id}
                   jobItem={item}
+                  onDeleteJobItem={onDeleteJobItem}
                 />
               );
             })
@@ -34,4 +36,5 @@ export default function JobTable({ jobs }) {
 
 JobTable.propTypes = {
   jobs: PropTypes.array,
+  onDeleteJobItem: PropTypes.func,
 };

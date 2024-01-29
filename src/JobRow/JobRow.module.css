@@ -1,0 +1,15 @@
+.deleteLink,
+.editLink {
+  cursor: pointer;
+  color: blue;
+}
+
+.deleteLink:hover,
+.editLink:hover {
+  text-decoration: underline;
+}
+
+.toolColumn {
+  display: flex;
+  gap: 1rem;
+}
