@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
+
 import JobRow from '../JobRow';
-import { jobs } from '../jobs';
 
 import styles from './JobTable.module.css';
 
-export default function JobTable() {
+export default function JobTable({ jobs }) {
   return (
     <table className={styles.jobTable}>
       <thead>
@@ -17,10 +18,10 @@ export default function JobTable() {
       </thead>
       <tbody className="">
         {jobs
-          ? jobs.map((item, idx) => {
+          ? jobs.map((item) => {
               return (
                 <JobRow
-                  key={idx}
+                  key={item.id}
                   jobItem={item}
                 />
               );
@@ -30,3 +31,7 @@ export default function JobTable() {
     </table>
   );
 }
+
+JobTable.propTypes = {
+  jobs: PropTypes.array,
+};

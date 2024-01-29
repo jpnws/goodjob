@@ -5,9 +5,9 @@ export default function JobRow({ jobItem }) {
     <tr>
       <td>{jobItem.jobTitle}</td>
       <td>{jobItem.company}</td>
-      <td>{jobItem.jobPostLink}</td>
-      <td>{jobItem.dateApplied}</td>
-      <td>{jobItem.status}</td>
+      <td>{jobItem.jobPost}</td>
+      <td>{jobItem.applicationDate}</td>
+      <td>{jobItem.applicationStatus}</td>
     </tr>
   );
 }

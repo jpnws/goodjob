@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
+
 import JobRow from './JobRow';
 
 describe('JobRow', () => {
   const mockJobItem = {
     jobTitle: 'Software Engineer',
     company: 'TechCorp',
-    jobPostLink: 'https://techcorp/jobs/se',
-    dateApplied: '2023-01-15',
-    status: 'Applied',
+    jobPost: 'https://techcorp/jobs/se',
+    applicationDate: '2023-01-15',
+    applicationStatus: 'Applied',
   };
 
   it('renders job title', () => {
@@ -23,16 +24,16 @@ describe('JobRow', () => {
 
   it('renders job post link', () => {
     render(<JobRow jobItem={mockJobItem} />);
-    expect(screen.getByText(mockJobItem.jobPostLink)).toBeInTheDocument();
+    expect(screen.getByText(mockJobItem.jobPost)).toBeInTheDocument();
   });
 
   it('renders date applied', () => {
     render(<JobRow jobItem={mockJobItem} />);
-    expect(screen.getByText(mockJobItem.dateApplied)).toBeInTheDocument();
+    expect(screen.getByText(mockJobItem.applicationDate)).toBeInTheDocument();
   });
 
   it('renders application status', () => {
     render(<JobRow jobItem={mockJobItem} />);
-    expect(screen.getByText(mockJobItem.status)).toBeInTheDocument();
+    expect(screen.getByText(mockJobItem.applicationStatus)).toBeInTheDocument();
   });
 });

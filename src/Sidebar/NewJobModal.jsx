@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 
-import styles from './NewJobModal.module.css';
 import { useState } from 'react';
 
-export default function NewJobModal({ onCloseNewJobModalButtonClick }) {
+import { v4 as uuidv4 } from 'uuid';
+
+import styles from './NewJobModal.module.css';
+
+export default function NewJobModal({
+  onCloseNewJobModalButtonClick,
+  onNewJobSaveButtonClick,
+}) {
   const [jobTitle, setJobTitle] = useState('');
   const [company, setCompany] = useState('');
   const [jobPost, setJobPost] = useState('');
@@ -28,6 +34,28 @@ export default function NewJobModal({ onCloseNewJobModalButtonClick }) {
 
   const handleApplicationStatus = (e) => {
     setApplicationStatus(e.target.value);
+  };
+
+  const handleSaveButtonClick = () => {
+    // Ensure that all the text fields are not empty.
+    if (
+      !(jobTitle && company && jobPost && applicationDate && applicationStatus)
+    ) {
+      return;
+    }
+
+    // Consolidate the new job application data into an object.
+    const newJobApplication = {
+      id: uuidv4(),
+      jobTitle: jobTitle,
+      company: company,
+      jobPost: jobPost,
+      applicationDate: applicationDate,
+      applicationStatus: applicationStatus,
+      createdAt: new Date().toISOString(),
+    };
+
+    onNewJobSaveButtonClick(newJobApplication);
   };
 
   return (
@@ -89,7 +117,12 @@ export default function NewJobModal({ onCloseNewJobModalButtonClick }) {
         />
       </form>
       <div className={styles.buttonContainer}>
-        <button className={styles.saveButton}>Save</button>
+        <button
+          className={styles.saveButton}
+          onClick={handleSaveButtonClick}
+        >
+          Save
+        </button>
       </div>
     </div>
   );
@@ -97,4 +130,5 @@ export default function NewJobModal({ onCloseNewJobModalButtonClick }) {
 
 NewJobModal.propTypes = {
   onCloseNewJobModalButtonClick: PropTypes.func,
+  onNewJobSaveButtonClick: PropTypes.func,
 };
