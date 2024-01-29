@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
@@ -81,5 +81,11 @@ describe('Create a new job', () => {
     expect(prevApplicationStatusLength + currApplicationStatusLength).toBe(
       prevApplicationStatusLength + 1
     );
+
+    // Delete the new job application entry.
+    const jobRow = screen.getByText(job.jobTitle).closest('tr');
+    const deleteButton = within(jobRow).getByText('Delete');
+    await user.click(deleteButton);
+    expect(jobRow).not.toBeInTheDocument();
   });
 });
