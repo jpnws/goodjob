@@ -8,8 +8,6 @@ describe('Create a new job', () => {
   it('submits a new job form and displays data in table', async () => {
     const user = userEvent.setup();
 
-    render(<Dashboard />);
-
     const job = {
       jobTitle: 'Cool Engineer',
       company: 'Cool Company Inc.',
@@ -18,6 +16,10 @@ describe('Create a new job', () => {
       applicationStatus: 'Applied',
     };
 
+    render(<Dashboard />);
+
+    // Count the number of application status text in the table.
+    // This is because there could be multiple same status text in the table.
     await waitFor(() => screen.getAllByText(job.applicationStatus));
     const prevApplicationStatues = waitFor(() =>
       screen.getAllByText(job.applicationStatus)
@@ -68,12 +70,14 @@ describe('Create a new job', () => {
     await waitFor(() => screen.getByText(job.jobPost));
     await waitFor(() => screen.getByText(job.applicationDate));
 
+    // Count the number of application status text in the table.
     await waitFor(() => screen.getAllByText(job.applicationStatus));
     const currApplicationStatues = waitFor(() =>
       screen.getAllByText(job.applicationStatus)
     );
     const currApplicationStatusLength = currApplicationStatues.length;
 
+    // Compare the previous and current application status text.
     expect(prevApplicationStatusLength + currApplicationStatusLength).toBe(
       prevApplicationStatusLength + 1
     );
