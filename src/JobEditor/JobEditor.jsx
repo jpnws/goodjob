@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-export default function JobEditor({ job }) {
+export default function JobEditor({ job, onJobUpdate }) {
   return (
-    <form>
+    <form onSubmit={onJobUpdate}>
       <input
         type="text"
         name="jobTitle"
@@ -35,4 +35,5 @@ export default function JobEditor({ job }) {
 
 JobEditor.propTypes = {
   job: PropTypes.object,
+  onJobUpdate: PropTypes.func,
 };

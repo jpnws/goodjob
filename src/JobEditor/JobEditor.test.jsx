@@ -37,7 +37,7 @@ describe('Show the job application editor', () => {
     render(
       <JobEditor
         job={job}
-        onSubmit={mockSubmitHandler}
+        onJobUpdate={mockSubmitHandler}
       />
     );
     await userEvent.click(screen.getByRole('button', { name: /save/i }));
