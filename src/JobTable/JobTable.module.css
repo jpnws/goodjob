@@ -1,5 +1,6 @@
 .jobTable {
   flex-grow: 1;
+  border: 1px solid green;
 }
 
 .headerTitle {

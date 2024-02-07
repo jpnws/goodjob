@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function NewJobButton() {
   return (
     <Link to="/new">
-      <button className={styles.newJobButton}>New job</button>
+      <button className={styles.newJobButton}>📝 New job</button>
     </Link>
   );
 }

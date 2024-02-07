@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import JobRow from '../JobRow';
+import JobRow from '../JobRow/JobRow';
 
 import styles from './JobTable.module.css';
 

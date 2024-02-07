@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import JobEditor from './JobEditor';
+import JobItem from './JobItem';
 
 describe('Show the job application editor', () => {
   it('populates job application data in form', () => {
@@ -15,7 +15,7 @@ describe('Show the job application editor', () => {
       applicationStatus: 'Applied',
       createdAt: '2023-01-15T12:34:56',
     };
-    render(<JobEditor job={job} />);
+    render(<JobItem job={job} />);
     expect(screen.getByDisplayValue(job.jobTitle)).toBeInTheDocument();
     expect(screen.getByDisplayValue(job.company)).toBeInTheDocument();
     expect(screen.getByDisplayValue(job.jobPost)).toBeInTheDocument();
@@ -35,7 +35,7 @@ describe('Show the job application editor', () => {
       createdAt: '2023-01-15T12:34:56',
     };
     render(
-      <JobEditor
+      <JobItem
         job={job}
         onJobUpdate={mockSubmitHandler}
       />

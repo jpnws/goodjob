@@ -56,7 +56,7 @@ export default function NewJob({ onNewJobSaveButtonClick }) {
   };
 
   return (
-    <div className={styles.newJobModal}>
+    <div className={styles.newJobPanel}>
       <div className={styles.header}>
         <span className={styles.headerTitle}>New job</span>
       </div>

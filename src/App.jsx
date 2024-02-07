@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
 import NewJob from './NewJob/NewJob';
 import JobTable from './JobTable/JobTable';
+import JobItem from './JobItem/JobItem';
 
 import { jobs } from './jobs';
 
@@ -23,6 +24,10 @@ export default function App() {
       }
     });
     setJobApplications(updatedJobApplications);
+  };
+
+  const handleJobUpdateButtonClick = (e) => {
+    console.log(e.target.value);
   };
 
   return (
@@ -46,6 +51,10 @@ export default function App() {
             element={
               <NewJob onNewJobSaveButtonClick={handleNewJobSaveButtonClick} />
             }
+          />
+          <Route
+            path="jobs/:jobId"
+            element={<JobItem onJobUpdate={handleJobUpdateButtonClick} />}
           />
         </Route>
       </Routes>

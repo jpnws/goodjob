@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
-export default function JobEditor({ job, onJobUpdate }) {
+import { jobs } from '../jobs';
+
+export default function JobItem({ onJobUpdate }) {
+  const { jobId } = useParams();
+
+  const job = jobs.find((item) => {
+    return item.id === jobId;
+  });
+
   return (
     <form onSubmit={onJobUpdate}>
       <input
@@ -33,7 +42,7 @@ export default function JobEditor({ job, onJobUpdate }) {
   );
 }
 
-JobEditor.propTypes = {
+JobItem.propTypes = {
   job: PropTypes.object,
   onJobUpdate: PropTypes.func,
 };

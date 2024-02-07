@@ -2,11 +2,15 @@ import PropTypes from 'prop-types';
 
 import styles from './JobRow.module.css';
 
+import { Link } from 'react-router-dom';
+
 export default function JobRow({ jobItem, onDeleteJobItem }) {
   return (
     <tr>
       <td className={styles.toolColumn}>
-        <span className={styles.editLink}>Edit</span>
+        <span className={styles.editLink}>
+          <Link to={`jobs/${jobItem.id}`}>Edit</Link>
+        </span>
         <span
           className={styles.deleteLink}
           onClick={() => onDeleteJobItem(jobItem)}

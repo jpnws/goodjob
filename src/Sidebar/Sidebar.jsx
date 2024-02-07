@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import NewJobButton from './NewJobButton';
+import NewJobButton from '../NewJobButton/NewJobButton';
 
 import styles from './Sidebar.module.css';
 
