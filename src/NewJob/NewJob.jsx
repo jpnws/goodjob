@@ -4,12 +4,9 @@ import { useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import styles from './NewJobModal.module.css';
+import styles from './NewJob.module.css';
 
-export default function NewJobModal({
-  onCloseNewJobModalButtonClick,
-  onNewJobSaveButtonClick,
-}) {
+export default function NewJob({ onNewJobSaveButtonClick }) {
   const [jobTitle, setJobTitle] = useState('');
   const [company, setCompany] = useState('');
   const [jobPost, setJobPost] = useState('');
@@ -62,7 +59,6 @@ export default function NewJobModal({
     <div className={styles.newJobModal}>
       <div className={styles.header}>
         <span className={styles.headerTitle}>New job</span>
-        <button onClick={onCloseNewJobModalButtonClick}>x</button>
       </div>
       <form className={styles.newJobForm}>
         <label htmlFor="jobTitle">Job title</label>
@@ -128,7 +124,7 @@ export default function NewJobModal({
   );
 }
 
-NewJobModal.propTypes = {
+NewJob.propTypes = {
   onCloseNewJobModalButtonClick: PropTypes.func,
   onNewJobSaveButtonClick: PropTypes.func,
 };
