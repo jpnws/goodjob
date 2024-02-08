@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
 
 import JobRow from './JobRow';
 
 describe('JobRow', () => {
   const mockJobItem = {
+    id: '81246938-60df-41b3-bfc9-2976a2f9ca92',
     jobTitle: 'Software Engineer',
     company: 'TechCorp',
     jobPost: 'https://techcorp/jobs/se',
@@ -13,27 +15,47 @@ describe('JobRow', () => {
   };
 
   it('renders job title', () => {
-    render(<JobRow jobItem={mockJobItem} />);
+    render(
+      <MemoryRouter>
+        <JobRow jobItem={mockJobItem} />
+      </MemoryRouter>
+    );
     expect(screen.getByText(mockJobItem.jobTitle)).toBeInTheDocument();
   });
 
   it('renders company name', () => {
-    render(<JobRow jobItem={mockJobItem} />);
+    render(
+      <MemoryRouter>
+        <JobRow jobItem={mockJobItem} />
+      </MemoryRouter>
+    );
     expect(screen.getByText(mockJobItem.company)).toBeInTheDocument();
   });
 
   it('renders job post link', () => {
-    render(<JobRow jobItem={mockJobItem} />);
+    render(
+      <MemoryRouter>
+        <JobRow jobItem={mockJobItem} />
+      </MemoryRouter>
+    );
     expect(screen.getByText(mockJobItem.jobPost)).toBeInTheDocument();
   });
 
   it('renders date applied', () => {
-    render(<JobRow jobItem={mockJobItem} />);
+    render(
+      <MemoryRouter>
+        <JobRow jobItem={mockJobItem} />
+      </MemoryRouter>
+    );
     expect(screen.getByText(mockJobItem.applicationDate)).toBeInTheDocument();
   });
 
   it('renders application status', () => {
-    render(<JobRow jobItem={mockJobItem} />);
+    render(
+      <MemoryRouter>
+        <JobRow jobItem={mockJobItem} />
+      </MemoryRouter>
+    );
     expect(screen.getByText(mockJobItem.applicationStatus)).toBeInTheDocument();
   });
 });

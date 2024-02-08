@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
 import Dashboard from '../src/Dashboard';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('Create a new job', () => {
   it('submits a new job form and displays data in table', async () => {
@@ -16,7 +17,11 @@ describe('Create a new job', () => {
       applicationStatus: 'Applied',
     };
 
-    render(<Dashboard />);
+    render(
+      <MemoryRouter>
+        <Dashboard />
+      </MemoryRouter>
+    );
 
     // Count the number of application status text in the table.
     // This is because there could be multiple same status text in the table.
