@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './Dashboard/Dashboard';
 import NewJob from './NewJob/NewJob';
 import JobTable from './JobTable/JobTable';
-import JobItem from './JobItem/JobItem';
+import JobItemWrapper from './JobItem/JobItemWrapper';
 
 import { jobs } from './jobs';
 
@@ -27,14 +27,8 @@ export default function App() {
   };
 
   const handleJobUpdateButtonClick = (updatedJobItem) => {
-    const jobApplicationIndex = jobApplications.findIndex((jobApplication) => {
-      return jobApplication.id === updatedJobItem.id;
-    });
-    const tempJobs = jobApplications.slice();
-    const updatedJobApplications = tempJobs.splice(
-      jobApplicationIndex,
-      1,
-      updatedJobItem
+    const updatedJobApplications = jobApplications.map((job) =>
+      job.id === updatedJobItem.id ? updatedJobItem : job
     );
     setJobApplications(updatedJobApplications);
   };
@@ -64,11 +58,9 @@ export default function App() {
           <Route
             path="jobs/:jobId"
             element={
-              <JobItem
+              <JobItemWrapper
                 onJobUpdate={handleJobUpdateButtonClick}
-                jobItem={jobApplications.find(
-                  (job) => job.id === useParams().jobId
-                )}
+                jobApplications={jobApplications}
               />
             }
           />

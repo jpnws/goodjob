@@ -1,31 +1,23 @@
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { jobs } from '../jobs';
+import { useState } from 'react';
 
 import styles from './JobItem.module.css';
 
-export default function JobItem({ onJobUpdate }) {
-  const { jobId } = useParams();
-  const [jobItem, setJobItem] = useState({
-    id: '',
-    jobTitle: '',
-    company: '',
-    jobPost: '',
-    applicationDate: '',
-    applicationStatus: '',
-  });
-
-  useEffect(() => {
-    const job = jobs.find((item) => item.id === jobId);
-    if (job) {
-      setJobItem(job);
+export default function JobItem({ onJobUpdate, jobItem }) {
+  const [jobItemState, setJobItemState] = useState(
+    jobItem || {
+      id: '',
+      jobTitle: '',
+      company: '',
+      jobPost: '',
+      applicationDate: '',
+      applicationStatus: '',
     }
-  }, [jobId]);
+  );
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setJobItem((prevState) => ({
+    setJobItemState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -33,7 +25,7 @@ export default function JobItem({ onJobUpdate }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onJobUpdate(jobItem);
+    onJobUpdate(jobItemState);
   };
 
   return (
@@ -43,41 +35,41 @@ export default function JobItem({ onJobUpdate }) {
     >
       <input
         type="hidden"
-        value={jobItem.id}
+        value={jobItemState.id}
       />
       <label htmlFor="jobTitle">Job title</label>
       <input
         type="text"
         name="jobTitle"
-        value={jobItem.jobTitle}
+        value={jobItemState.jobTitle}
         onChange={handleInputChange}
       />
       <label htmlFor="company">Company</label>
       <input
         type="text"
         name="company"
-        value={jobItem.company}
+        value={jobItemState.company}
         onChange={handleInputChange}
       />
       <label htmlFor="jobPost">Job post</label>
       <input
         type="text"
         name="jobPost"
-        value={jobItem.jobPost}
+        value={jobItemState.jobPost}
         onChange={handleInputChange}
       />
       <label htmlFor="applicationDate">Application date</label>
       <input
         type="text"
         name="applicationDate"
-        value={jobItem.applicationDate}
+        value={jobItemState.applicationDate}
         onChange={handleInputChange}
       />
       <label htmlFor="applicationStatus">Application status</label>
       <input
         type="text"
         name="applicationStatus"
-        value={jobItem.applicationStatus}
+        value={jobItemState.applicationStatus}
         onChange={handleInputChange}
       />
       <button type="submit">Save</button>
@@ -87,4 +79,5 @@ export default function JobItem({ onJobUpdate }) {
 
 JobItem.propTypes = {
   onJobUpdate: PropTypes.func.isRequired,
+  jobItem: PropTypes.object,
 };
