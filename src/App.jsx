@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 
 import Dashboard from './Dashboard/Dashboard';
 import NewJob from './NewJob/NewJob';
@@ -26,8 +26,17 @@ export default function App() {
     setJobApplications(updatedJobApplications);
   };
 
-  const handleJobUpdateButtonClick = (e) => {
-    console.log(e.target.value);
+  const handleJobUpdateButtonClick = (updatedJobItem) => {
+    const jobApplicationIndex = jobApplications.findIndex((jobApplication) => {
+      return jobApplication.id === updatedJobItem.id;
+    });
+    const tempJobs = jobApplications.slice();
+    const updatedJobApplications = tempJobs.splice(
+      jobApplicationIndex,
+      1,
+      updatedJobItem
+    );
+    setJobApplications(updatedJobApplications);
   };
 
   return (
@@ -54,7 +63,14 @@ export default function App() {
           />
           <Route
             path="jobs/:jobId"
-            element={<JobItem onJobUpdate={handleJobUpdateButtonClick} />}
+            element={
+              <JobItem
+                onJobUpdate={handleJobUpdateButtonClick}
+                jobItem={jobApplications.find(
+                  (job) => job.id === useParams().jobId
+                )}
+              />
+            }
           />
         </Route>
       </Routes>
