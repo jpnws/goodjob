@@ -20,9 +20,7 @@ export default function App() {
 
   const handleDeleteItemClick = (jobItem) => {
     const updatedJobApplications = jobApplications.filter((item) => {
-      if (item.id !== jobItem.id) {
-        return item;
-      }
+      return item.id !== jobItem.id;
     });
     setJobApplications(updatedJobApplications);
   };
