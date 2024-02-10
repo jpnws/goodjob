@@ -1,0 +1,17 @@
+.newJobButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  padding: 2px 5px 2px 5px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.newJobButton:hover {
+  border-color: #000000;
+  color: #000000;
+}
