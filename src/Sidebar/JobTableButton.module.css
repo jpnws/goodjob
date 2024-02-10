@@ -1,0 +1,16 @@
+.jobTableButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  cursor: pointer;
+  padding: 2px 5px 2px 5px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.jobTableButton:hover {
+  border-radius: 5px;
+  background-color: #eeeeee;
+  color: #000000;
+}
