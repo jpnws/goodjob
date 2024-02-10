@@ -15,3 +15,7 @@
   border-color: #000000;
   color: #000000;
 }
+
+.newJobButton:visited {
+  color: #000000;
+}
