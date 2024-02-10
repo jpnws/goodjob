@@ -2,26 +2,23 @@ import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import Dashboard from '../src/Dashboard';
-import { MemoryRouter } from 'react-router-dom';
+import App from '../src/App';
 
 describe('Create a new job', () => {
   it('submits a new job form and displays data in table', async () => {
     const user = userEvent.setup();
 
     const job = {
+      id: 'dk38fkl3-4524-4a8e-8f05-a52ae17a6ebf',
       jobTitle: 'Cool Engineer',
       company: 'Cool Company Inc.',
       jobPost: 'https://www.cool-company123.com/jobs/123',
       applicationDate: '2024-01-28',
       applicationStatus: 'Applied',
+      createdAt: '2023-01-15T12:34:56',
     };
 
-    render(
-      <MemoryRouter>
-        <Dashboard />
-      </MemoryRouter>
-    );
+    render(<App />);
 
     // Count the number of application status text in the table.
     // This is because there could be multiple same status text in the table.
@@ -31,9 +28,7 @@ describe('Create a new job', () => {
     );
     const prevApplicationStatusLength = prevApplicationStatues.length;
 
-    await user.click(screen.getByRole('button', { name: /new job/i }));
-
-    await waitFor(() => screen.getByRole('button', { name: /save/i }));
+    await user.click(screen.getByRole('button', { name: /New job/i }));
 
     const jobTitleField = screen.getByLabelText(/Job title/i);
     const jobCompanyField = screen.getByLabelText(/Company/i);
@@ -41,11 +36,11 @@ describe('Create a new job', () => {
     const jobApplicationDateField = screen.getByLabelText(/Application date/);
     const jobApplicationStatusField = screen.getByLabelText(/Status/i);
 
-    expect(jobTitleField).toBeVisible();
-    expect(jobCompanyField).toBeVisible();
-    expect(jobPostField).toBeVisible();
-    expect(jobApplicationDateField).toBeVisible();
-    expect(jobApplicationStatusField).toBeVisible();
+    await waitFor(() => expect(jobTitleField).toBeVisible());
+    await waitFor(() => expect(jobCompanyField).toBeVisible());
+    await waitFor(() => expect(jobPostField).toBeVisible());
+    await waitFor(() => expect(jobApplicationDateField).toBeVisible());
+    await waitFor(() => expect(jobApplicationStatusField).toBeVisible());
 
     await user.type(jobTitleField, job.jobTitle);
     await user.type(jobCompanyField, job.company);
@@ -53,11 +48,15 @@ describe('Create a new job', () => {
     await user.type(jobApplicationDateField, job.applicationDate);
     await user.type(jobApplicationStatusField, job.applicationStatus);
 
-    expect(jobTitleField.value).toBe(job.jobTitle);
-    expect(jobCompanyField.value).toBe(job.company);
-    expect(jobPostField.value).toBe(job.jobPost);
-    expect(jobApplicationDateField.value).toBe(job.applicationDate);
-    expect(jobApplicationStatusField.value).toBe(job.applicationStatus);
+    await waitFor(() => expect(jobTitleField.value).toBe(job.jobTitle));
+    await waitFor(() => expect(jobCompanyField.value).toBe(job.company));
+    await waitFor(() => expect(jobPostField.value).toBe(job.jobPost));
+    await waitFor(() =>
+      expect(jobApplicationDateField.value).toBe(job.applicationDate)
+    );
+    await waitFor(() =>
+      expect(jobApplicationStatusField.value).toBe(job.applicationStatus)
+    );
 
     const newJobApplicationSubmitButton = screen.getByRole('button', {
       name: /save/i,
@@ -65,10 +64,9 @@ describe('Create a new job', () => {
     expect(newJobApplicationSubmitButton).toBeVisible();
     await user.click(newJobApplicationSubmitButton);
 
-    const closeNewJobModal = screen.getByRole('button', { name: /x/i });
-    expect(closeNewJobModal).toBeVisible();
-    await user.click(closeNewJobModal);
-    expect(closeNewJobModal).not.toBeInTheDocument();
+    const jobTableButton = screen.getByRole('button', { name: /Jobs/i });
+    await waitFor(() => jobTableButton);
+    await user.click(jobTableButton);
 
     await waitFor(() => screen.getByText(job.jobTitle));
     await waitFor(() => screen.getByText(job.company));
