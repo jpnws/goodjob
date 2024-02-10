@@ -6,6 +6,7 @@ import NewJob from './NewJob/NewJob';
 import JobTable from './JobTable/JobTable';
 import Dashboard from './Dashboard/Dashboard';
 import JobItemWrapper from './JobItem/JobItemWrapper';
+import NotFoundPage from './NotFoundPage';
 
 import { jobs } from './jobs';
 
@@ -65,6 +66,10 @@ export default function App() {
             }
           />
         </Route>
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
