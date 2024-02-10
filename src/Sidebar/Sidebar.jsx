@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-
-import NewJobButton from '../NewJobButton/NewJobButton';
+import NewJobButton from './NewJobButton';
+import JobTableButton from './JobTableButton';
 
 import styles from './Sidebar.module.css';
 
@@ -8,10 +7,7 @@ export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <NewJobButton />
+      <JobTableButton />
     </aside>
   );
 }
-
-Sidebar.propTypes = {
-  onNewJobSaveButtonClick: PropTypes.func,
-};

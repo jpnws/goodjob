@@ -1,5 +1,11 @@
 .sidebar {
-  width: 200px;
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border: 1px solid red;
+  padding: 5px;
+  width: 200px;
+}
+
+.sidebarLinkText {
 }
