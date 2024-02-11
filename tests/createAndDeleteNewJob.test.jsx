@@ -64,7 +64,9 @@ describe('Create a new job', () => {
     expect(newJobApplicationSubmitButton).toBeVisible();
     await user.click(newJobApplicationSubmitButton);
 
-    const jobTableButton = screen.getByRole('button', { name: /Jobs/i });
+    const jobTableButton = screen.getByRole('button', {
+      name: /Job applications/i,
+    });
     await waitFor(() => jobTableButton);
     await user.click(jobTableButton);
 
