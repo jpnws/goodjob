@@ -13,3 +13,11 @@
   display: flex;
   gap: 1rem;
 }
+
+.tableRow {
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  background-color: #eeeeee;
+}
