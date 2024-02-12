@@ -41,6 +41,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       <input
         type="text"
         name="jobTitle"
+        id="jobTitle"
         value={jobItemState.jobTitle}
         onChange={handleInputChange}
       />
@@ -48,6 +49,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       <input
         type="text"
         name="company"
+        id="company"
         value={jobItemState.company}
         onChange={handleInputChange}
       />
@@ -55,6 +57,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       <input
         type="text"
         name="jobPost"
+        id="jobPost"
         value={jobItemState.jobPost}
         onChange={handleInputChange}
       />
@@ -62,6 +65,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       <input
         type="date"
         name="applicationDate"
+        id="applicationDate"
         value={jobItemState.applicationDate}
         onChange={handleInputChange}
       />
@@ -69,6 +73,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       <input
         type="text"
         name="applicationStatus"
+        id="applicationStatus"
         value={jobItemState.applicationStatus}
         onChange={handleInputChange}
       />
