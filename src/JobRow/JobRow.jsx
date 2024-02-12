@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function JobRow({ jobItem, onDeleteJobItem }) {
   return (
-    <tr>
+    <tr className={styles.tableRow}>
       <td className={styles.toolColumn}>
         <span className={styles.editLink}>
           <Link to={`jobs/${jobItem.id}`}>Edit</Link>
