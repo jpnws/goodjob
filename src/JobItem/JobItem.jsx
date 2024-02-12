@@ -60,7 +60,7 @@ export default function JobItem({ onJobUpdate, jobItem }) {
       />
       <label htmlFor="applicationDate">Application date</label>
       <input
-        type="text"
+        type="date"
         name="applicationDate"
         value={jobItemState.applicationDate}
         onChange={handleInputChange}
