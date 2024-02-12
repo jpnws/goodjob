@@ -1,4 +1,5 @@
 import Sidebar from '../Sidebar/Sidebar';
+import TopBar from '../TopBar/TopBar';
 
 import styles from './Dashboard.module.css';
 
@@ -8,7 +9,10 @@ export default function Dashboard() {
   return (
     <main className={styles.dashboard}>
       <Sidebar />
-      <Outlet />
+      <div className={styles.contentWrapper}>
+        <TopBar />
+        <Outlet />
+      </div>
     </main>
   );
 }
