@@ -4,24 +4,16 @@ import styles from './JobRow.module.css';
 
 import { Link } from 'react-router-dom';
 
-export default function JobRow({ jobItem, onDeleteJobItem }) {
+export default function JobRow({ jobItem }) {
   return (
-    <tr className={styles.tableRow}>
-      <td className={styles.toolColumn}>
-        <span className={styles.editLink}>
-          <Link to={`jobs/${jobItem.id}`}>Edit</Link>
-        </span>
-        <span
-          className={styles.deleteLink}
-          onClick={() => onDeleteJobItem(jobItem)}
-        >
-          Delete
-        </span>
-      </td>
-      <td>{jobItem.jobTitle}</td>
-      <td>{jobItem.company}</td>
-      <td>{jobItem.applicationStatus}</td>
-    </tr>
+    <Link
+      to={`jobs/${jobItem.id}`}
+      className={styles.tableRow}
+    >
+      <div className={styles.jobTitleCol}>{jobItem.jobTitle}</div>
+      <div className={styles.companyCol}>{jobItem.company}</div>
+      <div className={styles.statusCol}>{jobItem.applicationStatus}</div>
+    </Link>
   );
 }
 

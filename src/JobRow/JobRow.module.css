@@ -15,9 +15,25 @@
 }
 
 .tableRow {
+  display: flex;
+  justify-content: space-between;
   cursor: pointer;
+  color: #000000;
+  text-decoration: none;
 }
 
 .tableRow:hover {
   background-color: #eeeeee;
+}
+
+.jobTitleCol {
+  width: 250px;
+}
+
+.companyCol {
+  width: 250px;
+}
+
+.statusCol {
+  width: 250px;
 }

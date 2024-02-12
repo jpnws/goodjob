@@ -7,3 +7,23 @@
 .headerTitle {
   text-align: left;
 }
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.jobTitleCol {
+  width: 250px;
+  font-weight: bold;
+}
+
+.companyNameCol {
+  width: 250px;
+  font-weight: bold;
+}
+
+.statusCol {
+  width: 250px;
+  font-weight: bold;
+}
