@@ -1,7 +1,5 @@
 .jobTable {
   flex-grow: 1;
-  border: 1px solid green;
-  border-collapse: collapse;
 }
 
 .headerTitle {
@@ -11,6 +9,9 @@
 .tableHeader {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: #eeeeee;
+  padding: 0 1rem 0 1rem;
 }
 
 .jobTitleCol {
