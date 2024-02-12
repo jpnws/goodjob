@@ -1,0 +1,11 @@
+.appTitleBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.appTitle {
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

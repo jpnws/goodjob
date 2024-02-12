@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border: 1px solid red;
+  border-right: 1px solid #000000;
+  background-color: #fafafa;
   padding: 5px;
-  width: 200px;
-}
-
-.sidebarLinkText {
+  width: 225px;
+  height: 100vh;
 }
