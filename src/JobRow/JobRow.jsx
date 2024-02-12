@@ -20,8 +20,6 @@ export default function JobRow({ jobItem, onDeleteJobItem }) {
       </td>
       <td>{jobItem.jobTitle}</td>
       <td>{jobItem.company}</td>
-      <td>{jobItem.jobPost}</td>
-      <td>{jobItem.applicationDate}</td>
       <td>{jobItem.applicationStatus}</td>
     </tr>
   );

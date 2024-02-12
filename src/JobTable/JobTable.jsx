@@ -12,8 +12,6 @@ export default function JobTable({ jobs, onDeleteJobItem }) {
           <th></th>
           <th className={styles.headerTitle}>Job Title</th>
           <th className={styles.headerTitle}>Company</th>
-          <th className={styles.headerTitle}>Job Post</th>
-          <th className={styles.headerTitle}>Application Date</th>
           <th className={styles.headerTitle}>Status</th>
         </tr>
       </thead>
