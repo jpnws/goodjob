@@ -1,28 +1,19 @@
-.deleteLink,
-.editLink {
-  cursor: pointer;
-  color: blue;
+.rowLinkContainer {
+  text-decoration: none;
 }
 
-.deleteLink:hover,
-.editLink:hover {
-  text-decoration: underline;
-}
-
-.toolColumn {
-  display: flex;
-  gap: 1rem;
-}
-
-.tableRow {
+.rowWrapper {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: transparent;
+  padding: 0 1rem 0 1rem;
   color: #000000;
   text-decoration: none;
 }
 
-.tableRow:hover {
+.rowWrapper:hover {
   background-color: #eeeeee;
 }
 

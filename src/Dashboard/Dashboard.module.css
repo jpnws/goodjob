@@ -1,7 +1,10 @@
 .dashboard {
   display: flex;
-  gap: 1rem;
   margin-right: auto;
   margin-left: auto;
   border: 1px solid #000000;
+}
+
+.contentWrapper {
+  width: 100%;
 }
