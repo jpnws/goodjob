@@ -1,4 +1,4 @@
-import ThumbsUpIcon from './ThumbsUpIcon';
+import ThumbsUpIcon from '../Sidebar/ThumbsUpIcon';
 
 import styles from './AppTitle.module.css';
 

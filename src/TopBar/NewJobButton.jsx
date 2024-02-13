@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import CreateNewJobIcon from './CreateNewJobIcon';
+import CreateNewJobIcon from '../Sidebar/CreateNewJobIcon';
 
 import styles from './NewJobButton.module.css';
 
