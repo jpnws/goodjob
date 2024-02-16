@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-import styles from './NewJob.module.css';
+import styles from "./NewJob.module.css";
 
 export default function NewJob({ onNewJobSaveButtonClick }) {
-  const [jobTitle, setJobTitle] = useState('');
-  const [company, setCompany] = useState('');
-  const [jobPost, setJobPost] = useState('');
-  const [applicationDate, setApplicationDate] = useState('');
-  const [applicationStatus, setApplicationStatus] = useState('');
+  const [jobTitle, setJobTitle] = useState("");
+  const [company, setCompany] = useState("");
+  const [jobPost, setJobPost] = useState("");
+  const [applicationDate, setApplicationDate] = useState("");
+  const [applicationStatus, setApplicationStatus] = useState("");
 
   const handleJobTitle = (e) => {
     setJobTitle(e.target.value);

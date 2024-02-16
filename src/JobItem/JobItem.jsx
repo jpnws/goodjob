@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useState } from "react";
 
-import styles from './JobItem.module.css';
+import styles from "./JobItem.module.css";
 
 export default function JobItem({ onJobUpdate, jobItem }) {
   const [jobItemState, setJobItemState] = useState(
     jobItem || {
-      id: '',
-      jobTitle: '',
-      company: '',
-      jobPost: '',
-      applicationDate: '',
-      applicationStatus: '',
+      id: "",
+      jobTitle: "",
+      company: "",
+      jobPost: "",
+      applicationDate: "",
+      applicationStatus: "",
     }
   );
 

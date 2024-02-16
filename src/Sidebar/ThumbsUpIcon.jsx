@@ -8,9 +8,9 @@ export default function ThumbsUpIcon() {
       viewBox="0 0 3.6 3.265"
     >
       <defs id="defs1">
-        <style id="style1">{'.cls-4{fill:#576065}'}</style>
+        <style id="style1">{".cls-4{fill:#576065}"}</style>
       </defs>
-      <title id="title1">{'thumb-up'}</title>
+      <title id="title1">{"thumb-up"}</title>
       <g
         id="thumb-up"
         transform="matrix(.04 0 0 .04 0 -.167)"
@@ -24,14 +24,14 @@ export default function ThumbsUpIcon() {
               id="path1"
               d="M31.06 76.07 33 76c5.41-.16 8.94 8 13 8h32c4 0 4.78-5.89 4.73-8.33 0 0 4.94-2.21 2.68-11.11a9.13 9.13 0 0 0 2.85-7 9.17 9.17 0 0 0-2.68-6.81 11.52 11.52 0 0 0 2.68-7.22c0-4.3-3.78-6.75-7.8-6.75H68.71c-10.24 0-9.38-5.4-9.38-5.4s-1.16-14.13-4.76-20.6C50.05 2.6 41 5.33 44.36 15.89c2.51 7.78-9 19.5-13.16 23.45"
               style={{
-                fill: '#ffdac6',
+                fill: "#ffdac6",
               }}
             />
             <path
               id="path2"
               d="M27.1 33.87H5.93c-4 0-4.13 3-4.13 6.67v33.9c0 3.68.12 6.66 4.13 6.66H27.1c4 0 4.13-3 4.13-6.66v-33.9c0-3.68-.11-6.67-4.13-6.67z"
               style={{
-                fill: '#ff8898',
+                fill: "#ff8898",
               }}
             />
             <circle
@@ -40,7 +40,7 @@ export default function ThumbsUpIcon() {
               cy={69.78}
               r={3.76}
               style={{
-                fill: '#ffeb97',
+                fill: "#ffeb97",
               }}
             />
           </g>

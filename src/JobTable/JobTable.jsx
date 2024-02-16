@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import JobRow from '../JobRow/JobRow';
+import JobRow from "../JobRow/JobRow";
 
-import styles from './JobTable.module.css';
+import styles from "./JobTable.module.css";
 
 export default function JobTable({ jobs, onDeleteJobItem }) {
   return (

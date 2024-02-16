@@ -1,8 +1,8 @@
-import TopBar from '../TopBar/TopBar';
+import TopBar from "../TopBar/TopBar";
 
-import styles from './Dashboard.module.css';
+import styles from "./Dashboard.module.css";
 
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   return (

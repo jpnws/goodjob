@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import JobItem from './JobItem';
+import PropTypes from "prop-types";
+import JobItem from "./JobItem";
 
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 export default function JobItemWrapper({ onJobUpdate, jobApplications }) {
   const { jobId } = useParams();

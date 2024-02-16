@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import styles from './JobRow.module.css';
+import styles from "./JobRow.module.css";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function JobRow({ jobItem }) {
   return (

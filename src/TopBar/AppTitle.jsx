@@ -1,6 +1,6 @@
-import ThumbsUpIcon from '../Sidebar/ThumbsUpIcon';
+import ThumbsUpIcon from "../Sidebar/ThumbsUpIcon";
 
-import styles from './AppTitle.module.css';
+import styles from "./AppTitle.module.css";
 
 export default function AppTitle() {
   return (

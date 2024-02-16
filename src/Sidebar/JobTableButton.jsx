@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import styles from './JobTableButton.module.css';
-import BriefCaseIcon from './BriefCaseIcon';
+import styles from "./JobTableButton.module.css";
+import BriefCaseIcon from "./BriefCaseIcon";
 
 export default function JobTableButton() {
   return (
