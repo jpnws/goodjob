@@ -11,7 +11,7 @@ export default function JobTableButton() {
       className={styles.jobTableButton}
     >
       <BriefCaseIcon />
-      <span className={styles.sidebarLinkText}>Job applications</span>
+      <span className={styles.sidebarLinkText}>Jobs</span>
     </Link>
   );
 }

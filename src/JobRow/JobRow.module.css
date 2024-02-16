@@ -1,13 +1,5 @@
-.rowLinkContainer {
-  text-decoration: none;
-}
-
 .rowWrapper {
-  display: flex;
-  justify-content: space-between;
   cursor: pointer;
-  border-bottom: 1px solid #d3d3d3;
-  background-color: transparent;
   padding: 0 1rem 0 1rem;
   color: #000000;
   text-decoration: none;
@@ -18,13 +10,13 @@
 }
 
 .jobTitleCol {
-  width: 250px;
+  min-width: 250px;
 }
 
 .companyCol {
-  width: 250px;
+  min-width: 250px;
 }
 
 .statusCol {
-  width: 250px;
+  min-width: 250px;
 }

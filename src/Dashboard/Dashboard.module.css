@@ -1,10 +1,18 @@
-.dashboard {
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid #000000;
+.header {
+  border-bottom: 1px solid #d3d3d3;
+  background-color: #fafafa;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-.contentWrapper {
-  width: 100%;
+.subHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 1024px;
+}
+
+.main {
+  margin: 1rem auto 0 auto;
+  max-width: 1024px;
 }

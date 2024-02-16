@@ -1,4 +1,5 @@
-import TopBar from "../TopBar/TopBar";
+import AppTitle from "./AppTitle";
+import NewJobButton from "./NewJobButton";
 
 import styles from "./Dashboard.module.css";
 
@@ -6,11 +7,16 @@ import { Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   return (
-    <main className={styles.dashboard}>
-      <div className={styles.contentWrapper}>
-        <TopBar />
+    <>
+      <header className={styles.header}>
+        <div className={styles.subHeader}>
+          <AppTitle />
+          <NewJobButton />
+        </div>
+      </header>
+      <main className={styles.main}>
         <Outlet />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

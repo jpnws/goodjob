@@ -6,24 +6,28 @@ import styles from "./JobTable.module.css";
 
 export default function JobTable({ jobs, onDeleteJobItem }) {
   return (
-    <div className={styles.jobTable}>
-      <div className={styles.tableHeader}>
-        <div className={styles.jobTitleCol}>Job title</div>
-        <div className={styles.companyNameCol}>Company name</div>
-        <div className={styles.statusCol}>Status</div>
-      </div>
-      {jobs
-        ? jobs.map((item) => {
-            return (
-              <JobRow
-                key={item.id}
-                jobItem={item}
-                onDeleteJobItem={onDeleteJobItem}
-              />
-            );
-          })
-        : null}
-    </div>
+    <table className={styles.jobTable}>
+      <thead>
+        <tr className={styles.tableHeader}>
+          <th className={styles.jobTitleCol}>Job</th>
+          <th className={styles.companyNameCol}>Company</th>
+          <th className={styles.statusCol}>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {jobs
+          ? jobs.map((item) => {
+              return (
+                <JobRow
+                  key={item.id}
+                  jobItem={item}
+                  onDeleteJobItem={onDeleteJobItem}
+                />
+              );
+            })
+          : null}
+      </tbody>
+    </table>
   );
 }
 
